@@ -9,7 +9,7 @@ face_recognizer.read('face_trained.yml')
 
 img = cv.imread("C:\\Images_library\\Anwesh Shaw\\IMG-20220109-WA0102_3.jpg")
 
-
+# For resizing the size of the image
 def rescale_frame(frame, scale=0.85):
     width = int(frame.shape[1] * scale)
     height = int(frame.shape[0] * scale)
@@ -20,7 +20,7 @@ def rescale_frame(frame, scale=0.85):
 frame_resize2 = rescale_frame(img)
 grey = cv.cvtColor(frame_resize2, cv.COLOR_BGR2GRAY)
 
-# Detect the face in the image
+# For detecting the face present in the image
 faces_found = haar_cascade.detectMultiScale(frame_resize2,scaleFactor=1.1,minNeighbors=4)
 
 for (x, y, w, h) in faces_found:
