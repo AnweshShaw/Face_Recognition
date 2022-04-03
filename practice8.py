@@ -10,7 +10,7 @@ haar_cascade = cv.CascadeClassifier('haar_cascade.xml')
 features = []
 labels = []
 
-
+# For training the computer to recognise the faces with a given image library dataset
 def create_train():
     for person in people:
         path = os.path.join(DIR, person)
